@@ -3,6 +3,7 @@
 use App\Http\Livewire\Member\Auth\Login;
 use App\Http\Livewire\Member\Auth\Register;
 use App\Http\Livewire\Member\Dashboard;
+use App\Http\Livewire\Staff\Overseas\Dashboard as OverseasDashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,5 @@ Route::middleware(['member'])->group(function () {
 
     Route::get('/member/dashboard', Dashboard::class)->name('member.dashboard');
 });
+
+Route::get('/staff/dashboard', OverseasDashboard::class)->name('staff.overseas.dashboard');

@@ -11,9 +11,11 @@
             </button>
         </div>
         <div class="flex-1 hidden px-2 mx-2 lg:flex">
-            <span class="text-lg font-bold">
-                LOGO
-            </span>
+            <a href="{{ url('/') }}">
+                    <span class="text-lg font-bold">
+                        LOGIFREIGHT
+                    </span>
+                </a>
         </div>
         <div class="flex-1 lg:flex-none">
             <div class="flex-1 hidden px-2 mx-2 lg:flex">

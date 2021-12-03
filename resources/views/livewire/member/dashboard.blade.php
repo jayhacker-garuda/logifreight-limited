@@ -105,20 +105,20 @@
                                                 </thead>
                                                 <tbody>
 
-                                                    @foreach ($packages["packages"] as $package)
-                                                    {{-- {{ dd($package['data']) }} --}}
-                                                    <tr class="rounded-t hover">
-                                                        <td>{{ $package['member']['full_name'] }}</td>
-                                                        <td>{{ $package['package_type'] }}</td>
-                                                        <td>{{ $package['tracking_number'] }}</td>
-                                                        <td>{{ $package['company_tracking_number'] }}</td>
-                                                        <td>{{ $package['shipping_company'] }}</td>
-                                                    </tr>
+                                                    @foreach ($packages['packages'] as $package)
+                                                        {{-- {{ dd($package['data']) }} --}}
+                                                        <tr class="rounded-t hover">
+                                                            <td>{{ $package['member']['full_name'] }}</td>
+                                                            <td>{{ $package['package_type'] }}</td>
+                                                            <td>{{ $package['tracking_number'] }}</td>
+                                                            <td>{{ $package['company_tracking_number'] }}</td>
+                                                            <td>{{ $package['shipping_company'] }}</td>
+                                                        </tr>
                                                     @endforeach
-                                                    <tfoot>
+                                                <tfoot>
 
-                                                        {{-- {{ $packages["packages"] }} --}}
-                                                    </tfoot>
+                                                    {{-- {{ $packages["packages"] }} --}}
+                                                </tfoot>
                                                 </tbody>
                                             </table>
                                         @endif
@@ -140,18 +140,31 @@
                 </div>
             </div>
             <div
-                class="z-30 w-2/6 mt-5 bg-gray-200 border-t-2 border-l-4 border-yellow-300 rounded-tl-lg shadow-md md:flex-col md:flex">
-
-
+                class="w-2/6 h-auto mt-5 border-t-2 border-l-4 border-yellow-300 rounded-lg rounded-tl-lg shadow bg-base-200 drawer drawer-end md:flex-col md:flex">
+                <input id="my-drawer-4" type="checkbox" class="drawer-toggle">
+                <div class="flex flex-col items-center justify-center p-2 drawer-content">
+                    <label for="my-drawer-4" class="btn btn-primary drawer-button">Show Mail-Box Address</label>
+                </div>
+                <div class="drawer-side">
+                    <label for="my-drawer-4" class="drawer-overlay"></label>
+                    <div class="h-auto p-4 overflow-y-auto w-80 menu bg-base-100 text-base-content">
+                        @livewire('member.mail-box-address')
+                    </div>
+                </div>
             </div>
         </div>
         @if ($showForm)
             <div x-data="{ showForm: false }" x-on:show-form-open.window="showForm = true"
-                x-on:show-form-close.window="showForm = false">
+                x-on:show-form-close.window="showForm = false" x-transition:enter="ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90">
                 <div
                     class="fixed inset-0 z-50 flex items-center justify-center py-4 text-base bg-black bg-opacity-75 md:px-0">
 
-                    <div
+                    <div x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
+                        x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300"
+                        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
                         class="flex flex-col w-5/6 h-full p-4 m-auto overflow-y-scroll text-base border border-t-8 border-b-8 border-blue-400 rounded-lg shadow bg-base-200 md:w-1/2 lg:w-1/3">
                         <div class="flex flex-col p-4 space-y-4">
                             <div class="flex flex-col">
@@ -220,11 +233,12 @@
             <div x-data="{ showMessage: false }" x-on:success-modal-open.window="showMessage = true"
                 x-on:success-modal-close.window="showMessage = false">
                 <div
-                class="fixed inset-0 z-50 flex items-center justify-center py-4 text-base bg-black bg-opacity-75 md:px-0">
+                    class="fixed inset-0 z-50 flex items-center justify-center py-4 text-base bg-black bg-opacity-75 md:px-0">
 
-                <div class="inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle lg:p-16 sm:max-w-xl sm:w-full">
-                    {{ $readyToUse }}
-                </div>
+                    <div
+                        class="inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle lg:p-16 sm:max-w-xl sm:w-full">
+                        {{ $readyToUse }}
+                    </div>
                 </div>
             </div>
         @endif

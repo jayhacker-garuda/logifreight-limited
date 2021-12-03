@@ -19,31 +19,22 @@
     <div class="flex flex-col">
         <div class="container mx-auto mt-4 mb-2 shadow-lg navbar bg-neutral text-neutral-content rounded-box">
             <div class="flex-none px-2 mx-2">
-                <span class="text-lg font-bold">
-                    LOGO
-                </span>
+                <a href="{{ url('/') }}">
+                    <span class="text-lg font-bold">
+                        LOGIFREIGHT
+                    </span>
+                </a>
             </div>
             <div class="flex-1 px-2 mx-2">
                 <div class="items-stretch hidden lg:flex">
-                    {{-- <a class="btn btn-ghost btn-sm rounded-btn">
-                        Home
-                    </a>
-                    <a class="btn btn-ghost btn-sm rounded-btn">
-                        Portfolio
-                    </a>
-                    <a class="btn btn-ghost btn-sm rounded-btn">
-                        About
-                    </a>
-                    <a class="btn btn-ghost btn-sm rounded-btn">
-                        Contact
-                    </a> --}}
+
                 </div>
             </div>
             <div class="flex-none">
                 <a href="{{ route('member.auth.login') }}">
                     <button class="btn btn-ghost">
-                    Login
-                </button>
+                        Login
+                    </button>
                 </a>
             </div>
         </div>
@@ -83,60 +74,61 @@
             <div class="container flex flex-row mx-auto space-x-4">
                 <div class="h-auto shadow-xl card image-full w-80">
 
-                <figure><iframe src="https://embed.lottiefiles.com/animation/78126"></iframe></figure>
-                <div class="justify-end text-center card-body">
-                    <h2 class="pt-10 text-6xl font-black card-title">3</h2>
-                    <p class="font-black">Sign Up</p>
-                    <div class="card-actions">
-                        <p>
-                            Sign up with Logifreight-Limited for free and get your personalized US mailbox
-                        </p>
+                    <figure><iframe src="https://embed.lottiefiles.com/animation/78126"></iframe></figure>
+                    <div class="justify-end text-center card-body">
+                        <h2 class="pt-10 text-6xl font-black card-title">3</h2>
+                        <p class="font-black">Sign Up</p>
+                        <div class="card-actions">
+                            <p>
+                                Sign up with Logifreight-Limited for free and get your personalized US mailbox
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="h-auto shadow-xl card image-full w-80">
+                <div class="h-auto shadow-xl card image-full w-80">
 
-                <figure><iframe src="https://embed.lottiefiles.com/animation/36605"></iframe></figure>
-                <div class="justify-end text-center card-body">
-                    <h2 class="pt-10 text-6xl font-black card-title">2</h2>
-                    <p class="font-black">Shop</p>
-                    <div class="card-actions">
-                        <p>
-                            Shop at your favourite stores world-wide and send item(s) to your Logifreight-Limited
-                            mailbox
-                            OR have family/friends send packages to your Logifreight-Limited mailbox.
-                        </p>
+                    <figure><iframe src="https://embed.lottiefiles.com/animation/36605"></iframe></figure>
+                    <div class="justify-end text-center card-body">
+                        <h2 class="pt-10 text-6xl font-black card-title">2</h2>
+                        <p class="font-black">Shop</p>
+                        <div class="card-actions">
+                            <p>
+                                Shop at your favourite stores world-wide and send item(s) to your Logifreight-Limited
+                                mailbox
+                                OR have family/friends send packages to your Logifreight-Limited mailbox.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="h-auto shadow-xl card image-full w-80">
+                <div class="h-auto shadow-xl card image-full w-80">
 
-                <figure><iframe src="https://embed.lottiefiles.com/animation/27519"></iframe></figure>
-                <div class="justify-end text-center card-body">
-                    <h2 class="pt-10 text-6xl font-black card-title">1</h2>
-                    <p class="font-black">Ship</p>
-                    <div class="card-actions">
-                        <p>
-                            Logifreight-Limited receives your package(s) at our US warehouse and notifies you, at which
-                            point you
-                            upload your invoice.
-                        </p>
+                    <figure><iframe src="https://embed.lottiefiles.com/animation/27519"></iframe></figure>
+                    <div class="justify-end text-center card-body">
+                        <h2 class="pt-10 text-6xl font-black card-title">1</h2>
+                        <p class="font-black">Ship</p>
+                        <div class="card-actions">
+                            <p>
+                                Logifreight-Limited receives your package(s) at our US warehouse and notifies you, at
+                                which
+                                point you
+                                upload your invoice.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="h-auto shadow-xl card image-full w-80">
+                <div class="h-auto shadow-xl card image-full w-80">
 
-                <figure><iframe src="https://embed.lottiefiles.com/animation/75701"></iframe></figure>
-                <div class="justify-end text-center card-body">
-                    <p class="pt-10 font-black">Delivery</p>
-                    <div class="card-actions">
-                        <p>
-                            You will receive a second notification when package(s) are ready for delivery. Click the
-                            link in the email to see your deliver.
-                        </p>
+                    <figure><iframe src="https://embed.lottiefiles.com/animation/75701"></iframe></figure>
+                    <div class="justify-end text-center card-body">
+                        <p class="pt-10 font-black">Delivery</p>
+                        <div class="card-actions">
+                            <p>
+                                You will receive a second notification when package(s) are ready for delivery. Click the
+                                link in the email to see your deliver.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
 
         </div>

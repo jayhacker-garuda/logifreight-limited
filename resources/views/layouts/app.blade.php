@@ -57,17 +57,22 @@
             background: transparent;
         }
 
+        [x-cloak]{
+            display: none;
+        }
     </style>
     @livewireStyles()
 </head>
 
-<body class="min-h-screen font-sans antialiased leading-none bg-blue-900 text-cool-gray-500">
+<body class="max-h-screen font-sans antialiased leading-none bg-blue-900 text-cool-gray-500">
     <div class="flex flex-col">
 
         @if (session()->has('umi'))
             @livewire('nav-bar.member-nav-bar')
+        @elseif (session()->has('staff'))
+
+        @livewire('nav-bar.guest-nav-bar')
         @else
-            @livewire('nav-bar.guest-nav-bar')
         @endif
         <!-- Page Content -->
         <div>
@@ -75,6 +80,7 @@
         </div>
         <!-- End Page Content -->
 </div>
+<script src="{{ asset('js/alpine/side-nav-toggle.js') }}"></script>
 @livewireScripts()
 <script src="{{ asset('js/alpine/alpine3-4-2.min.js') }}"></script>
 
