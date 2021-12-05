@@ -2,7 +2,7 @@
     {{-- The Master doesn't talk, he acts. --}}
     <div x-data class="flex justify-between h-screen mx-auto">
         <!-- Mobile Menu Toggle -->
-        <button @click="$store.sidebar.navOpen = !$store.sidebar.navOpen" class="absolute sm:hidden top-5 right-5 focus:outline-none">
+        <button @click="$store.sidebar.navOpen = !$store.sidebar.navOpen" class="absolute z-50 shadow-md sm:hidden top-5 right-5 hover:text-yellow-300 focus:outline-none hover:bg-base-100 hover:rounded-md">
             <!-- Menu Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6"
                 :class="$store.sidebar.navOpen ? 'hidden' : '' " fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -20,7 +20,7 @@
         <div class="fixed space-y-2 transition-all duration-300 border-r-2 border-yellow-300 shadow-md rounded-r-md bg-cool-gray-800 sm:relative"
             :class="{ 'w-64' : $store.sidebar.full, 'w-64 sm:w-20' : !$store.sidebar.full, 'top-0 left-0': $store.sidebar.navOpen, 'top-0 -left-64 sm:left-0' : !$store.sidebar.navOpen }">
             <h1 class="py-4 font-black text-white"
-                :class="$store.sidebar.full ? 'text-2xl px-4' : 'text-xl px-4 sm:px-2' ">LOGO</h1>
+                :class="$store.sidebar.full ? 'text-2xl px-4' : 'text-xl px-4 sm:px-2' ">LOGIFREIGHT</h1>
             <div class="h-screen px-4 space-y-6">
 
                 <!-- SideBar Toggle -->
@@ -34,7 +34,7 @@
                     </svg>
                 </button>
                 <!-- Home -->
-                <div
+                <div wire:click="$emitUp('show_dashboard')"
                     @click="$store.sidebar.active = 'home'"
                     x-data="tooltip"
                     x-on:mouseover="show = true"
@@ -73,12 +73,12 @@
                     <div x-show="open" @click.outside="open = false"
                         :class="$store.sidebar.full ? expandedClass : shrinkedClass"
                         class="space-y-3 text-cool-gray-400">
-                        <h1 class="cursor-pointer hover:text-cool-gray-200">View Quick-Alerts</h1>
+                        <a href="javascript:void(0)" wire:click="$emitUp('show_quick_alerts')" class="cursor-pointer hover:text-cool-gray-200">View Quick-Alerts</a>
                         <h1 class="cursor-pointer hover:text-cool-gray-200">Add Quick-Alert</h1>
                     </div>
                 </div>
                 <!-- Package Details -->
-                <div @click="$store.sidebar.active = 'package-details'"
+                <div wire:click="$emitUp('show_package_details')" @click="$store.sidebar.active = 'package-details'"
                     x-data="tooltip"
                     x-on:mouseover="show = true"
                     x-on:mouseleave="show = false"

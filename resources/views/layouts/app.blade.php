@@ -64,7 +64,7 @@
     @livewireStyles()
 </head>
 
-<body class="max-h-screen font-sans antialiased leading-none bg-blue-900 text-cool-gray-500">
+<body class="h-screen font-sans antialiased leading-none bg-blue-900 text-cool-gray-500">
     <div class="flex flex-col">
 
         @if (session()->has('umi'))
